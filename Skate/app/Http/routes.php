@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('volunteer', 'VolunteerController@showAll');
+
+Route::get('/vol_details/1', function () {
+	return view('vol_details');
 });
