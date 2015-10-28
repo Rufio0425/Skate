@@ -5,6 +5,7 @@
 	<title>Volunteer Details</title>
 	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.5.8/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<style>
@@ -71,10 +72,18 @@
 		}
 
 		.aside{
-			padding:40px 10px;
+			padding:40px 10px 0 10px;
 			background-color: pink;
-			height:300px;
+			/*height:300px;*/
 			flex:1;
+			text-align:center;
+		}
+
+		.editors{
+			font-size:12pt;
+		}
+
+		.slide{
 			text-align:center;
 		}
 
@@ -150,30 +159,26 @@
         <div class="logo"><a href="">Skate After School</a></div>
         <div class="nav">
             <a href="">Home</a>
-            <a href="">About</a>
             <a href="">Who's Helping</a>
-            <a href="">Team</a>
-            <a href="">Give</a>
-            <a href="">Contact</a>
-            <a href="">Volunteer Application</a>
-            <a href="">Donate</a>
-            <a href="">Store</a>
+            <a href="">Volunteer Edit</a>
+            <a href="">New Volunteer</a>
         </div>
     </header>
 
 	<div class="panel profile">
 		<div class="volunteer">
 			<div class="aside">
-				<div class="vol_pic" style="background-image: url('http://assets.woodwardtv.com/media/thumbs/athlete/headshot/96157931_RYAN_LAY_HEADSHOT_.jpg.360x360_q85_crop-scale_upscale.jpg')"></div>
+				<div class="vol_pic" style="background-image: url('http://assets.woodwardtv.com/media/thumbs/athlete/headshot/96157931_RYAN_LAY_HEADSHOT_.jpg.360x360_q85_crop-scale_upscale.jpg')"></div><span class="editors"><i class="fa fa-camera-retro fa-lg"></i></span>
 				<div class="sponsers">
 					<a href="http://www.welcomeskateboards.com/" target="_blank"><img src="http://www.twelveboardstore.com.au/web_images/welcomeskate.png"></a>
 					<a href="http://www.coalatree.com/" target="_blank"><img src="http://static1.squarespace.com/static/50ab002ee4b00ef29d01c84e/50ac846ce4b0b1fe7ccf60af/50ac846ee4b0b1fe7ccf60b4/1353483375455/ClientLogo_CT.jpg"></a>
 					<a href="http://esskateboarding.com/" target="_blank"><img src="http://www.illogicalgravity.com/ilg/logos/eS.jpg"></a>
+				<span class="editors"><i class="fa fa-plus-square"></i></span>
 				</div>
 			</div>
 			<div class="content">
-				<div class="name">Ryan Lay</div>
-				<div class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, neque. Necessitatibus consequuntur vero eaque distinctio repudiandae libero velit eum saepe debitis vitae, rem voluptatum doloremque blanditiis illo, aliquam iure hic.</div>
+				<div class="name">Ryan Lay <span class="editors"><i class="fa fa-pencil"></i></span></div>
+				<div class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, neque. Necessitatibus consequuntur vero eaque distinctio repudiandae libero velit eum saepe debitis vitae, rem voluptatum doloremque blanditiis illo, aliquam iure hic. <span class="editors"><i class="fa fa-pencil"></i></div>
 			</div>
 		</div>
 	</div>
@@ -185,9 +190,8 @@
 			<div style="background-image: url('http://a3.espncdn.com/photo/2014/1016/as_skate_lay6_1536.jpg')"></div>
 			<div><iframe width="100%" height="100%" src="https://www.youtube.com/embed/93YiIOswx0g" frameborder="0" allowfullscreen></iframe></div>
 		</div>
-		<div class="media-join">
-			<button>Join</button>
-		</div>
+		<div><span class="editors">Add New Media<i class="fa fa-plus-square"></i></span></div>
+
 	</div>
 
 	<script type="text/javascript">
@@ -198,6 +202,10 @@
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				autoplaySpeed: 2000,
+			});
+
+			$('.editors').on('click', function(){
+				$(this).closest('div')
 			});
 		});
 	</script>
