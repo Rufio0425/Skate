@@ -13,6 +13,10 @@
 
 Route::get('volunteer', 'VolunteerController@showAll');
 
-Route::get('/vol_details/1', function () {
+Route::get('/vol_details/{id}', function () {
 	return view('vol_details');
+});
+
+Route::get('/vol_new', function () {
+	return view('vol_new');
 });

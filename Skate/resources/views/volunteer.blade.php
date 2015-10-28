@@ -215,9 +215,23 @@
                 left:50%;
                 top:50%;
                 display:none;
-
+                text-align:center;
 
                 transform: translate(-50%, -50%);
+            }
+
+            .lightbox > div{
+                font-size:16pt;
+            }
+
+            form{
+                padding:40px 0;
+                display:flex;
+                flex-direction:column;
+            }
+
+            .form_row{
+                font-size:16pt;
             }
 
             .lightbox-tint.on{
@@ -239,26 +253,28 @@
             .bottom-join{
                 text-align:center;
             }
-
-            form{
-                text-align:center;
-            }
         </style>
     </head>
     <body>
         <div class="lightbox-tint">
             <div class="lightbox">
+                <div>Let's Get Started!</div>
                 <form action="">
-                    <label for="">First Name
-                        <input type="text">
-                    </label><br>
-                    <label for="">Last Name
-                        <input type="text">
-                    </label><br>
-                    <label for="">Email
-                        <input type="text">
-                    </label><br>
-                    <button>Submit</button>
+                    <div class="form_row">
+                        <div class="row_name">First Name</div>
+                        <div class="input"><input type="text" placeholder="First Name"></div>
+                    </div>
+                    <div class="form_row">
+                        <div class="row_name">Last Name</div>
+                        <div class="input"><input type="text" placeholder="Last Name"></div>
+                    </div>
+                    <div class="form_row">
+                        <div class="row_name">Email</div>
+                        <div class="input"><input type="text" placeholder=""></div>
+                    </div>
+                    <div class="form_row">
+                        <button>Submit</button>
+                    </div>
                 </form>
                 <button class="exit">Exit</button>
             </div>
@@ -267,15 +283,9 @@
             <div class="logo"><a href="">Skate After School</a></div>
             <div class="nav">
                 <a href="">Home</a>
-                <a href="">About</a>
                 <a href="">Who's Helping</a>
-                <a href="">Team</a>
-                <a href="">Give</a>
-                <a href="">Contact</a>
-                <a href="">Volunteer Application</a>
-                <a href="">Donate</a>
-                <a href="">Store</a>
-                <button class="sign-up">Sign Up</button>
+                <a href="">New Volunteer</a>
+                <button class="sign-up">Become One of Us!</button>
             </div>
         </header>
         <div class="panel hero">

@@ -309,34 +309,12 @@
                 </div>
 
                 <div class="profiles">
+                    @foreach($volunteers as $volunteer)
                     <div class="profile">
                         <div class="profile_pic" style="background-image: url('https://pbs.twimg.com/profile_images/639255203015843840/LRsc2YV7.jpg')"></div>
-                        <div class="name"><a href="">Corey</a></div>
+                        <div class="name"><a href="">{{$volunteer->fullName()}}</a></div>
                     </div>
-                    <div class="profile">
-                        <div class="profile_pic" style="background-image: url('http://assets.woodwardtv.com/media/thumbs/athlete/headshot/96157931_RYAN_LAY_HEADSHOT_.jpg.360x360_q85_crop-scale_upscale.jpg')"></div>
-                        <div class="name"><a href="">Ryan Lay</a></div>
-                    </div>
-                    <div class="profile">
-                        <div class="profile_pic" style="background-image: url('https://pbs.twimg.com/profile_images/509758688924827648/79CWTWPo_400x400.jpeg')"></div>
-                        <div class="name"><a href="">Caleb Schrank</a></div>
-                    </div>
-                    <div class="profile">
-                        <div class="profile_pic" style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAI-AAAAJDMzYzE3MWVkLTAzODUtNDcxNC04YTg0LWNlZmZmNWQ4NmNiOQ.jpg')"></div>
-                        <div class="name"><a href="">Josh Eberhard</a></div>
-                    </div>
-                    <div class="profile">
-                        <div class="profile_pic" style="background-image: url('http://3.bp.blogspot.com/-zNsGNYzYmg8/UbY2u2OtS4I/AAAAAAAAMbk/B0CJxtsrmys/s1600/vlad.jpg')"></div>
-                        <div class="name"><a href="">Peter Vlad</a></div>
-                    </div>
-                    <div class="profile">
-                        <div class="profile_pic" style="background-image: url('http://assets.woodwardtv.com/media/thumbs/athlete/headshot/ari.shiffrin.jpg.360x360_q85_crop-scale_upscale.jpg')"></div>
-                        <div class="name"><a href="">Ari Shiffrin</a></div>
-                    </div>
-                    <div class="profile">
-                        <div class="profile_pic" style="background-image: url('http://assets.woodwardtv.com/media/thumbs/athlete/headshot/ari.shiffrin.jpg.360x360_q85_crop-scale_upscale.jpg')"></div>
-                        <div class="name"><a href="">Ari Shiffrin</a></div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
