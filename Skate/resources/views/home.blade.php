@@ -123,41 +123,24 @@
         <header>
             <div class="logo"><a href="">Skate After School</a></div>
             <div class="nav">
-                <a href="/">Home</a>
-                <a href="/volunteer">Who's Helping</a>
+                <a href="/">Login</a>
             </div>
         </header>
         <div class="panel">
             <div class="main">
-                <div class="title"><span>New Volunteer</span></div>
+                <div class="title"><span>Login</span></div>
                 <div class="volunteer">
                     <form action="">
                         <div class="form_row">
-                            <div class="row_name">First Name</div>
-                            <div class="input"><input type="text" placeholder="First Name"></div>
+                            <div class="row_name">Username</div>
+                            <div class="input"><input type="text" placeholder="Username"></div>
                         </div>
                         <div class="form_row">
-                            <div class="row_name">Last Name</div>
-                            <div class="input"><input type="text" placeholder="Last Name"></div>
-                        </div>
-                        <div class="form_row">
-                            <div class="row_name">Email</div>
-                            <div class="input"><input type="text" placeholder="Contact, without the spam"></div>
-                        </div>
-                        <div class="form_row">
-                            <div class="row_name">Images</div>
-                            <div class="input"><input type="text" placeholder="Cool Pictures"></div>
-                        </div>
-                        <div class="form_row">
-                            <div class="row_name">Videos</div>
-                            <div class="input"><input type="text" placeholder="Sick tricks"></div>
-                        </div>
-                        <div class="form_row">
-                            <div class="row_name">Bio</div>
-                            <div class="input"><textarea name="" placeholder="Why this person is awesome!"></textarea></div>
+                            <div class="row_name">Password</div>
+                            <div class="input"><input type="password" placeholder="Password"></div>
                         </div>
                     </form>
-                    <button>Save Volunteer</button>
+                    <button><a href="/volunteer">Login</a></button>
                 </div>
             </div>
         </div>

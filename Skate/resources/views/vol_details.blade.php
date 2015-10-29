@@ -3,15 +3,17 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Volunteer Details</title>
+	<link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Raleway:300,400,500' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.5.8/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.5.8/slick-theme.css"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<style>
 	/*body*/
 		body {
-			background-color: royalblue;
+			background-image: url('http://www.skateafterschool.org/wp-content/uploads/2014/02/7.jpg');
+			background-size:cover;
             margin: 0;
             padding: 0;
             width: 100%;
@@ -23,48 +25,59 @@
 		header{
             display:flex;
             text-align:center;
-            background-color: black;
-            font-family:helvetica;
+            background-color: #222222;
+            font-family:arial;
             position:fixed;
             width:100%;
             z-index:1000;
             transition: all .35s;
         }
 
+        header a{
+          	text-decoration:none;
+        	font-family: 'Pathway Gothic One', sans-serif;
+        	font-weight:bold;
+        }
+
         header:hover{
             padding:10px 0;
-            background-color: purple;
+            background-color: #222222;
         }
 
         .logo{
             text-align:left;
-            background-color: orange;
+            background-color: #222222;
+            color:white;
             flex:1;
             padding:15px 70px;
         }
 
+        .logo a{
+        	color:white;
+        }
+
         .nav{
-            background-color: red;
+            background-color: #222222;
             flex:3;
             text-align:right;
+            font-size:14pt;
             padding:15px 51px 15px;
         }
 
         .nav a{
-            background-color: white;
-            font-size:10pt;
+            background-color: #222222;
+            color:#666666;
             padding:10px;
         }
 
     /*profile*/
 
 		.profile{
-			background-color: blue;
-			padding-top:33px;
+			/*background-color: blue;*/
+			padding-top:40px;
 		}
 
 		.volunteer{
-			background-color: brown;
 			display:flex;
 			width:74em;
             margin-left:auto;
@@ -72,19 +85,13 @@
 		}
 
 		.aside{
-			padding:40px 10px 0 10px;
-			background-color: pink;
-			/*height:300px;*/
+			padding:40px 10px 0 20px;
 			flex:1;
 			text-align:center;
 		}
 
 		.editors{
 			font-size:12pt;
-		}
-
-		.slide{
-			text-align:center;
 		}
 
 		.vol_pic{
@@ -102,24 +109,23 @@
 		.content{
 			padding:40px 0;
 			text-align:center;
-			background-color: magenta;
+			color:#FFFFFF;
 			flex:3;
+
 		}
 
 		.name{
 			font-weight:900;
-			font-size:50pt;
+			font-size:65pt;
+			font-family: 'Pathway Gothic One', sans-serif;
 		}
 
 		.bio{
-			font-size:16pt;
+			font-size:20pt;
+			font-family: 'Raleway', sans-serif;
 		}
 
 	/*media*/
-
-		.media{
-			background-color: green;
-		}
 
 		.slider{
 			padding-top:20px;
@@ -152,23 +158,28 @@
 		.media-join button:active{
 			background-color: red;
 		}
+
+		.red{
+			background-color: blue; 
+		}
 	</style>
 </head>
 <body>
 	<header>
-        <div class="logo"><a href="">Skate After School</a></div>
+        <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>
         <div class="nav">
             <a href="">Home</a>
-            <a href="">Who's Helping</a>
-            <a href="">Volunteer Edit</a>
-            <a href="">New Volunteer</a>
+            <a href="/volunteer">Who's Helping</a>
+            <a href="/vol_new">New Volunteer</a>
+            <button class="sign_up">Become One of Us!</button>
         </div>
     </header>
 
 	<div class="panel profile">
 		<div class="volunteer">
 			<div class="aside">
-				<div class="vol_pic" style="background-image: url('http://assets.woodwardtv.com/media/thumbs/athlete/headshot/96157931_RYAN_LAY_HEADSHOT_.jpg.360x360_q85_crop-scale_upscale.jpg')"></div><span class="editors"><i class="fa fa-camera-retro fa-lg"></i></span>
+				<div class="vol_pic" style="background-image: url('{{ $volunteer->profile_image_url }}')"></div>
+				<div><span class="editors"><i class="fa fa-camera-retro fa-lg"></i></span></div>
 				<div class="sponsers">
 					<a href="http://www.welcomeskateboards.com/" target="_blank"><img src="http://www.twelveboardstore.com.au/web_images/welcomeskate.png"></a>
 					<a href="http://www.coalatree.com/" target="_blank"><img src="http://static1.squarespace.com/static/50ab002ee4b00ef29d01c84e/50ac846ce4b0b1fe7ccf60af/50ac846ee4b0b1fe7ccf60b4/1353483375455/ClientLogo_CT.jpg"></a>
@@ -177,8 +188,8 @@
 				</div>
 			</div>
 			<div class="content">
-				<div class="name">Ryan Lay <span class="editors"><i class="fa fa-pencil"></i></span></div>
-				<div class="bio">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, neque. Necessitatibus consequuntur vero eaque distinctio repudiandae libero velit eum saepe debitis vitae, rem voluptatum doloremque blanditiis illo, aliquam iure hic. <span class="editors"><i class="fa fa-pencil"></i></div>
+				<div class="name">{{ $volunteer->first_name }} {{ $volunteer->last_name }} <span class="editors"><i class="fa fa-pencil"></i></span></div>
+				<div class="bio">{{ $volunteer->bio }}<span class="editors"><i class="fa fa-pencil"></i></div>
 			</div>
 		</div>
 	</div>
@@ -205,7 +216,7 @@
 			});
 
 			$('.editors').on('click', function(){
-				$(this).closest('div').css('background-color', 'red')
+				$(this).closest('div').toggleClass('red');
 			});
 		});
 	</script>

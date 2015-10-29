@@ -9,4 +9,10 @@ class VolunteerController extends Controller{
 		// print_r($volunteers);
 		return view('volunteer', ['volunteers' => $volunteers]);
 	}
+
+	public function show($id) {
+		$volunteer = Volunteer::get($id);
+		// print_r($volunteer);
+		return view('vol_details', ['volunteer' => $volunteer]);
+	}
 }

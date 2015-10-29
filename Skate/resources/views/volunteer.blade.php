@@ -282,9 +282,9 @@
         <header>
             <div class="logo"><a href="">Skate After School</a></div>
             <div class="nav">
-                <a href="">Home</a>
-                <a href="">Who's Helping</a>
-                <a href="">New Volunteer</a>
+                <a href="/">Home</a>
+                <a href="/volunteer">Who's Helping</a>
+                <a href="/vol_new">New Volunteer</a>
                 <button class="sign-up">Become One of Us!</button>
             </div>
         </header>
@@ -310,8 +310,8 @@
                 <div class="profiles">
                     @foreach($volunteers as $volunteer)
                     <div class="profile">
-                        <div class="profile_pic" style="background-image: url('https://pbs.twimg.com/profile_images/639255203015843840/LRsc2YV7.jpg')"></div>
-                        <div class="name"><a href="">{{$volunteer->fullName()}}</a></div>
+                        <div class="profile_pic" style="background-image: url('{{$volunteer->profile_image_url}}')"></div>
+                        <div class="name"><a href="/volunteer/{{$volunteer->id}}">{{$volunteer->fullName()}}</a></div>
                     </div>
                     @endforeach
                 </div>

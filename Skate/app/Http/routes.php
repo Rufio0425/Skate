@@ -11,11 +11,17 @@
 |
 */
 
-Route::get('volunteer', 'VolunteerController@showAll');
-
-Route::get('/vol_details/{id}', function () {
-	return view('vol_details');
+Route::get('/', function () {
+	return view('home');
 });
+
+Route::get('/volunteer', 'VolunteerController@showAll');
+
+Route::get('/volunteer/{id}', 'VolunteerController@show');
+
+// Route::get('/vol_details/{id}', function () {
+// 	return view('vol_details');
+// });
 
 Route::get('/vol_new', function () {
 	return view('vol_new');
