@@ -285,7 +285,7 @@
                 <a href="/">Home</a>
                 <a href="/volunteer">Who's Helping</a>
                 <a href="/vol_new">New Volunteer</a>
-                <button class="sign-up">Become One of Us!</button>
+                <button class="sign_up">Become One of Us!</button>
             </div>
         </header>
         <div class="panel hero">

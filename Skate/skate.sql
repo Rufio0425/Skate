@@ -18,7 +18,7 @@ insert into volunteer(first_name, last_name, email, bio, profile_image_url) valu
 insert into volunteer(first_name, last_name, email, bio, profile_image_url) values('Corey', 'Cavanaugh', 'coreyc@gmail.com', 'This is the bio of Corey Cavanaugh, what a super awesome bio this is.','https://scontent.fphx1-2.fna.fbcdn.net/hphotos-xat1/v/t1.0-9/11163778_1037088366302888_2007233291588245393_n.jpg?oh=cf48b1f47044274f2c49aae230232eb7&oe=56BD9A4F');
 insert into volunteer(first_name, last_name, email, bio, profile_image_url) values('Peter', 'Vlad', 'pvlad@gmail.com', 'This is the bio of Peter Vlad, what a super awesome bio this is.','http://3.bp.blogspot.com/-zNsGNYzYmg8/UbY2u2OtS4I/AAAAAAAAMbk/B0CJxtsrmys/s1600/vlad.jpg');
 insert into volunteer(first_name, last_name, email, bio, profile_image_url) values('Max', 'Collay', 'mcollay@gmail.com', 'This is the bio of Max Collay, what a super awesome bio this is.','https://scontent.fphx1-2.fna.fbcdn.net/hphotos-xpa1/v/t1.0-9/10447617_808619449150500_5036414172844067131_n.jpg?oh=7db23b49602316493d9789c5866a87f3&oe=56866982');
-insert into volunteer(first_name, last_name, email, profile_image_url) values('Caleb', 'Schrank', 'cschrank@gmail.com', 'https://pbs.twimg.com/profile_images/509758688924827648/79CWTWPo_400x400.jpeg');
+insert into volunteer(first_name, last_name, email, bio, profile_image_url) values('Caleb', 'Schrank', 'cschrank@gmail.com', 'This is Caleb, he is awesome','https://pbs.twimg.com/profile_images/509758688924827648/79CWTWPo_400x400.jpeg');
 
 create table volunteer_media(
 	id int auto_increment primary key,
@@ -43,7 +43,14 @@ create table sponsor(
 	url varchar(255)
 );
 
+create table volspons(
+	vol_id int,
+	spons_id int
+);
+
 insert into sponsor (name, image_url, url) values('Welcome Skateboards', 'http://www.twelveboardstore.com.au/web_images/welcomeskate.png', 'http://www.welcomeskateboards.com/');
+insert into sponsor (name, image_url, url) values('Colaltree', 'http://static1.squarespace.com/static/50ab002ee4b00ef29d01c84e/50ac846ce4b0b1fe7ccf60af/50ac846ee4b0b1fe7ccf60b4/1353483375455/ClientLogo_CT.jpg', 'http://www.coalatree.com/');
+
 
 create table user (
 	id int auto_increment primary key,

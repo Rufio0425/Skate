@@ -19,6 +19,59 @@
             width: 100%;
             font-weight: 100;
         }
+     /*lightbox*/
+     	.lightbox-tint{
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background-color: rgba(0,0,0,0.4);
+            display:none;
+        }
+
+        .lightbox {
+            width: 500px;
+            height: 300px;
+            background-color: green;
+            position:fixed;
+            left:50%;
+            top:50%;
+            display:none;
+            text-align:center;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .lightbox > div{
+            font-size:16pt;
+        }
+
+        form{
+            padding:40px 0;
+            display:flex;
+            flex-direction:column;
+        }
+
+        .form_row{
+            font-size:16pt;
+        }
+
+        .lightbox-tint.on{
+            position:fixed;
+            display:block;
+        }
+
+        .lightbox-tint.on .lightbox{
+            position:fixed;
+            display:block;
+        }
+
+        .lightbox .exit{
+            position:absolute;
+            top: 0;
+            right: -50px;
+        }
 
      /*nav bar*/
 
@@ -70,6 +123,26 @@
             padding:10px;
         }
 
+        .nav a:hover{
+        	color:#fff;
+        }
+
+        .sign_up{
+        	text-decoration:none;
+	        font-family: 'Pathway Gothic One', sans-serif;
+			font-weight:600;
+	    	color: white;
+	    	border:0;
+	    	font-size: 16pt;
+	    	background-color: #ff6b6b;
+	    	border-radius:10px;
+	    	border:1px solid #ff6b6b;
+        }
+
+        .sign_up:active{
+        	background-color: #222222;
+        }
+
     /*profile*/
 
 		.profile{
@@ -92,12 +165,22 @@
 
 		.editors{
 			font-size:12pt;
+			color:black;
 		}
 
 		.vol_pic{
 			height:280px;
 			width:280px;
 			background-size:cover;
+			border-radius:140px;
+		}
+
+		.sponser_title{
+			font-family: 'Pathway Gothic One', sans-serif;
+			color:#FFFFFF;
+			font-weight: 900;
+    		font-size: 24pt;
+    		transform: translateY(-15px);
 		}
 
 		.sponsers img{
@@ -134,6 +217,7 @@
             margin-left:auto;
             margin-right:auto;
             text-align:center;
+            border-radius:100px;
 		}
 
 		.slider div{
@@ -146,25 +230,35 @@
 			text-align:center;
 		}
 
-		.media-join button{
-			background-color:blue;
-			height:40px;
-			border:0;
-			width:74em;
-			margin-left:auto;
-            margin-right:auto;
-		}
-
-		.media-join button:active{
-			background-color: red;
-		}
-
 		.red{
 			background-color: blue; 
 		}
 	</style>
 </head>
 <body>
+	<div class="lightbox-tint">
+        <div class="lightbox">
+            <div>Let's Get Started!</div>
+            <form action="">
+                <div class="form_row">
+                    <div class="row_name">First Name</div>
+                    <div class="input"><input type="text" placeholder="First Name"></div>
+                </div>
+                <div class="form_row">
+                    <div class="row_name">Last Name</div>
+                    <div class="input"><input type="text" placeholder="Last Name"></div>
+                </div>
+                <div class="form_row">
+                    <div class="row_name">Email</div>
+                    <div class="input"><input type="text" placeholder=""></div>
+                </div>
+                <div class="form_row">
+                    <button>Submit</button>
+                </div>
+            </form>
+            <button class="exit">Exit</button>
+        </div>
+    </div>
 	<header>
         <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>
         <div class="nav">
@@ -179,17 +273,21 @@
 		<div class="volunteer">
 			<div class="aside">
 				<div class="vol_pic" style="background-image: url('{{ $volunteer->profile_image_url }}')"></div>
+				<br>
 				<div><span class="editors"><i class="fa fa-camera-retro fa-lg"></i></span></div>
+				<br>
+				<div class="sponser_title">Sponsors</div>
 				<div class="sponsers">
-					<a href="http://www.welcomeskateboards.com/" target="_blank"><img src="http://www.twelveboardstore.com.au/web_images/welcomeskate.png"></a>
-					<a href="http://www.coalatree.com/" target="_blank"><img src="http://static1.squarespace.com/static/50ab002ee4b00ef29d01c84e/50ac846ce4b0b1fe7ccf60af/50ac846ee4b0b1fe7ccf60b4/1353483375455/ClientLogo_CT.jpg"></a>
-					<a href="http://esskateboarding.com/" target="_blank"><img src="http://www.illogicalgravity.com/ilg/logos/eS.jpg"></a>
+					@foreach($sponsors as $sponsor)
+					<a href="{{ $sponsor->url }}" target="_blank"><img src="{{ $sponsor->image_url }}"></a>
+					@endforeach
+					<br>
 				<span class="editors"><i class="fa fa-plus-square"></i></span>
 				</div>
 			</div>
 			<div class="content">
 				<div class="name">{{ $volunteer->first_name }} {{ $volunteer->last_name }} <span class="editors"><i class="fa fa-pencil"></i></span></div>
-				<div class="bio">{{ $volunteer->bio }}<span class="editors"><i class="fa fa-pencil"></i></div>
+				<div class="bio">{{ $volunteer->bio }} <span class="editors"><i class="fa fa-pencil"></i></div>
 			</div>
 		</div>
 	</div>
@@ -218,6 +316,25 @@
 			$('.editors').on('click', function(){
 				$(this).closest('div').toggleClass('red');
 			});
+
+			// $('.sign_up').on('click', function(){
+			// 	$(this).css('background-color', '#222222');
+			// });
+
+			$('button').click( function(){
+                $('.lightbox-tint').toggleClass('on');
+            });
+
+            $('.lightbox-tint').click( function(){
+                // Close lightbox and tint div
+                $('')
+            });
+
+            $('.lightbox').click( function(e){
+                console.log("hello lalala");
+                e.stopPropagation();
+            });
+
 		});
 	</script>
 	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.5.8/slick.min.js"></script>

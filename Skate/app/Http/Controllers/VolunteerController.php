@@ -11,8 +11,9 @@ class VolunteerController extends Controller{
 	}
 
 	public function show($id) {
-		$volunteer = Volunteer::get($id);
+		$volunteer = Volunteer::getVolunteer($id);
+		$sponsors = $volunteer->getSponsors();
 		// print_r($volunteer);
-		return view('vol_details', ['volunteer' => $volunteer]);
+		return view('vol_details', ['volunteer' => $volunteer, 'sponsors' => $sponsors]);
 	}
 }

@@ -36,7 +36,7 @@ class Volunteer {
         return $this->first_name . ' ' . $this->last_name;
     }
 
-    public static function get($id){
+    public static function getVolunteer($id){
         $sql = "select * from volunteer where id= :id";
 
         $row = DB::selectOne($sql, [':id' => $id]);
@@ -51,5 +51,14 @@ class Volunteer {
         $volunteer->email = $row->email;
         $volunteer->bio = $row->bio;
         return $volunteer;
+    }
+
+    public function getSponsors(){
+       $sql = "select * from volspons, sponsor where vol_id= :id and sponsor.id = volspons.spons_id";
+
+       $sponsors = DB::select($sql, [':id' => $this->id]);
+       // print_r($sponsors);
+
+       return $sponsors;
     }
 }
