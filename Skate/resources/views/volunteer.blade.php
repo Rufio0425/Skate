@@ -31,53 +31,80 @@
                 text-align: center;
                 display: inline-block;
             }
-
-            .title {
-                font-size: 200px;
-                font-family:'LeagueGothicRegular';
-            }*/
-            
+           
+            */
 
             header{
                 display:flex;
                 text-align:center;
-                background-color: black;
-                font-family:helvetica;
+                background-color: #222222;
+                font-family:arial;
                 position:fixed;
                 width:100%;
                 z-index:1000;
                 transition: all .35s;
             }
 
+            header a{
+                text-decoration:none;
+                font-family: 'Pathway Gothic One', sans-serif;
+                font-weight:bold;
+            }
+
             header:hover{
-                padding:10px 0;
-                background-color: purple;
+                padding:5px 0;
+                background-color: #222222;
             }
 
             .logo{
                 text-align:left;
-                background-color: orange;
+                background-color: #222222;
+                color:white;
                 flex:1;
-                padding:15px 70px;
+                padding:18px 70px;
+            }
+
+            .logo a{
+                color:white;
             }
 
             .nav{
-                background-color: red;
+                background-color: #222222;
                 flex:3;
                 text-align:right;
+                font-size:14pt;
                 padding:15px 51px 15px;
             }
 
             .nav a{
-                background-color: white;
-                font-size:10pt;
+                background-color: #222222;
+                color:#666666;
                 padding:10px;
+            }
+
+            .nav a:hover{
+                color:#fff;
+            }
+
+            .sign_up{
+                text-decoration:none;
+                font-family: 'Pathway Gothic One', sans-serif;
+                font-weight:600;
+                color: white;
+                border:0;
+                font-size: 16pt;
+                background-color: #ff6b6b;
+                border-radius:10px;
+                border:1px solid #ff6b6b;
+            }
+
+            .sign_up:active{
+                background-color: #222222;
             }
 
             .hero{
                 padding-top:33px;
                 width:100%;
-                background-color: blue;
             }
 
             .main{
@@ -86,34 +113,31 @@
                 width:74em;
                 margin-left:auto;
                 margin-right:auto;
-                background-color: yellow;
             }
 
             .title{
-                font-size:120px;
                 text-align:center;
-                background-color: green;
-            }
-
-            .title span{
-                background-color: pink;
+                font-size: 150px;
+                font-family: 'Pathway Gothic One', sans-serif;
+                color:#fff;
+                font-weight:900;
             }
 
             .vom{
                 text-align:center;
-                background-color: brown;
                 padding:20px 0;
+                font-family:'Raleway';
             }
 
 
             .vom_title{
                 padding:10px;
-                background-color: orange;
             }
 
             .vom_title span{
                 font-size:50px;
-                background-color: yellow;
+                font-family:'Raleway';
+                font-weight:400;
             }
 
             .vom_pic{
@@ -121,56 +145,51 @@
                 width:300px;
                 background-size:cover;
                 display:inline-block;
+                border-radius: 150px;
             }
             
             .content{
                 /*width:74em;
                 margin-left:auto;
                 margin-right:auto;*/
-                background-color: green;
                 display:flex;
                 text-align:center;
             }
 
             aside{
-                background-color: pink;
                 width:100px;
             }
 
-            .vol_name{
-                font-size:25px;
+            .vom_name{
+                font-size:25pt;
             }
 
 
             .volunteers{
+                font-family:'Raleway';
                 display:flex;
                 justify-content:center;
                 width:74em;
                 margin-left:auto;
                 margin-right:auto;
-                background-color:orange;
                 text-align:center;
                 padding:20px 0;
             }
 
             .vol_describe{
                 width:400px;
-                background-color: blue;
-                font-family: 'helvetica';
+                font-weight:500;
                 font-size:16pt;
             }
 
             .profiles{
-                background-color: pink;
                 flex-wrap:wrap;
                 justify-content:center;
                 display:flex;
             }
 
             .profile{
-                background-color: red;
                 margin:5px;
-                border-radius:5px;
             }
 
             .profile_pic{
@@ -181,10 +200,19 @@
             }
 
             .profile, .profile_pic{
-                border-radius:5px;
+                border-radius:100px;
             }
 
-            .lightbox-tint{
+            .vom_name a, .profile a{
+                text-decoration:none;
+                color:#fff;
+            }
+
+            .name{
+                font-size:16pt;
+            }
+/*Future lightbox*/
+            /*.lightbox-tint{
                 position:absolute;
                 top:0;
                 left:0;
@@ -235,15 +263,13 @@
                 position:absolute;
                 top: 0;
                 right: -50px;
-            }
-
-            .bottom-join{
-                text-align:center;
-            }
+            }*/
         </style>
     </head>
     <body>
-        <div class="lightbox-tint">
+
+    {{-- Future lightbox --}}
+        {{-- <div class="lightbox-tint">
             <div class="lightbox">
                 <div>Let's Get Started!</div>
                 <form action="">
@@ -265,11 +291,11 @@
                 </form>
                 <button class="exit">Exit</button>
             </div>
-        </div>
+        </div> --}}
         <header>
-            <div class="logo"><a href="">Skate After School</a></div>
+            <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>
             <div class="nav">
-                <a href="/">Home</a>
+                <a href="">Home</a>
                 <a href="/volunteer">Who's Helping</a>
                 <a href="/vol_new">New Volunteer</a>
                 <button class="sign_up">Become One of Us!</button>
@@ -283,7 +309,7 @@
                 <div class="vom">
                     <div class="vom_title"><span>Volunteer of The Month</span></div>
                     <div class="vom_pic" style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAI-AAAAJDMzYzE3MWVkLTAzODUtNDcxNC04YTg0LWNlZmZmNWQ4NmNiOQ.jpg')"></div>
-                    <div class="vol_name"><a href="">Josh Eberhard</a></div>
+                    <div class="vom_name"><a href="">Josh Eberhard</a></div>
                 </div>
             </div>
         </div>
@@ -291,14 +317,16 @@
             
             <div class="volunteers">
                 <div class="vol_describe">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ea ad nemo fugiat fuga veritatis illo perferendis maxime id, eius, accusantium eos, rem odit esse neque ipsam dolorum, cumque blanditiis. Blah blah blah blah blah blah blah blah blah
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ea ad nemo fugiat fuga veritatis illo perferendis maxime id, eius, accusantium eos, rem odit esse neque ipsam dolorum, cumque blanditiis.
                 </div>
 
                 <div class="profiles">
                     @foreach($volunteers as $volunteer)
                     <div class="profile">
-                        <div class="profile_pic" style="background-image: url('{{$volunteer->profile_image_url}}')"></div>
-                        <div class="name"><a href="/volunteer/{{$volunteer->id}}">{{$volunteer->fullName()}}</a></div>
+                        <a href="/volunteer/{{$volunteer->id}}">
+                            <div class="profile_pic" style="background-image: url('{{$volunteer->profile_image_url}}')"></div>
+                            <div class="name">{{$volunteer->fullName()}}</div>
+                        </a>
                     </div>
                     @endforeach
                 </div>
