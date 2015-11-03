@@ -6,7 +6,6 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:s100" rel="stylesheet" type="text/css">
         <link href="" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <link rel="stylesheet" href="fonts/">
         <style>
             @font-face {
                 font-family: 'LeagueGothicRegular';

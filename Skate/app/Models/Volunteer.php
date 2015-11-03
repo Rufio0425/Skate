@@ -61,4 +61,22 @@ class Volunteer {
 
        return $sponsors;
     }
+
+    public function updateVolunteerBio($newbio){
+        $sql = "update volunteer set bio = :bio where id = :id";
+
+        DB::update($sql, [':bio' => $newbio, ':id' => $this->id]);
+    }
+
+    public function newVolunteer($volunteer){
+        $sql = "insert into volunteer (first_name, last_name, email, bio, profile_image_url) values (:first_name, :last_name, :email, :bio, :profile_image_url)";
+
+        DB::insert($sql, [
+                'first_name' => $this->first_name,
+                'last_name' => $this->last_name,
+                'email' => $this->email,
+                'bio' => $this->bio,
+                'profile_image_url' => $this->profile_image_url,
+            ]);
+    }
 }

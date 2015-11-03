@@ -51,8 +51,12 @@ create table volspons(
 insert into sponsor (name, image_url, url) values('Welcome Skateboards', 'http://www.twelveboardstore.com.au/web_images/welcomeskate.png', 'http://www.welcomeskateboards.com/');
 insert into sponsor (name, image_url, url) values('Colaltree', 'http://static1.squarespace.com/static/50ab002ee4b00ef29d01c84e/50ac846ce4b0b1fe7ccf60af/50ac846ee4b0b1fe7ccf60b4/1353483375455/ClientLogo_CT.jpg', 'http://www.coalatree.com/');
 
+insert into volspons(vol_id, spons_id) values (1,1);
+insert into volspons(vol_id, spons_id) values (1,2);
+insert into volspons(vol_id, spons_id) values (2,1);
 
-create table user (
+
+create table users (
 	id int auto_increment primary key,
 	email varchar(255),
 	password varchar(255),
@@ -62,5 +66,3 @@ create table user (
 	created_at datetime,
 	updated_at datetime
 );
-
-insert into user (email, password, first_name, last_name) values('seanpeter.aguirre@gmail.com', 'Slugworth5', 'Sean', 'Aguirre');

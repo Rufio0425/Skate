@@ -305,6 +305,20 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
+			function addEditor(){
+				$('.editors').on('click', function(){
+					$(this).closest('div').html('<input placeholder="{{ $volunteer->bio }}" class="bio_input"><button class="save">Save</button><button>Cancel</button>');
+				});
+			}
+
+			addEditor();
+
+			$.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+                }
+            });
+
 			$('.slider').slick({
 				dots: true,
 				autoplay: true,
@@ -313,27 +327,39 @@
 				autoplaySpeed: 2000,
 			});
 
-			$('.editors').on('click', function(){
-				$(this).closest('div').toggleClass('red');
+			$('.bio').on('click', '.save', function(){
+				console.log('Hello');
+
+				var updatedBio =  $('.bio_input').val()
+
+				var formData = {
+					bio: updatedBio,
+				};
+
+
+
+				var button = this;
+
+				$.post( "/api/volunteer/{{ $volunteer->id }}/update", formData, function( data ) {
+  					console.log(button);
+  					$(button).parent().html(updatedBio + ' <span class="editors"><i class="fa fa-pencil"></i>');
+  					addEditor();
+				});
 			});
 
-			// $('.sign_up').on('click', function(){
-			// 	$(this).css('background-color', '#222222');
-			// });
+			// $('button').click( function(){
+   //              $('.lightbox-tint').toggleClass('on');
+   //          });
 
-			$('button').click( function(){
-                $('.lightbox-tint').toggleClass('on');
-            });
+            // $('.lightbox-tint').click( function(){
+            //     // Close lightbox and tint div
+            //     $('')
+            // });
 
-            $('.lightbox-tint').click( function(){
-                // Close lightbox and tint div
-                $('')
-            });
-
-            $('.lightbox').click( function(e){
-                console.log("hello lalala");
-                e.stopPropagation();
-            });
+            // $('.lightbox').click( function(e){
+            //     console.log("hello lalala");
+            //     e.stopPropagation();
+            // });
 
 		});
 	</script>

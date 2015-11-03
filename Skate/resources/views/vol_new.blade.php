@@ -131,33 +131,30 @@
             <div class="main">
                 <div class="title"><span>New Volunteer</span></div>
                 <div class="volunteer">
-                    <form action="">
+                    <form method="POST" action="/vol_new">
+                    {!! csrf_field() !!}
                         <div class="form_row">
                             <div class="row_name">First Name</div>
-                            <div class="input"><input type="text" placeholder="First Name"></div>
+                            <div class="input"><input type="text" placeholder="First Name" name="first_name"></div>
                         </div>
                         <div class="form_row">
                             <div class="row_name">Last Name</div>
-                            <div class="input"><input type="text" placeholder="Last Name"></div>
+                            <div class="input"><input type="text" placeholder="Last Name" name="last_name"></div>
                         </div>
                         <div class="form_row">
                             <div class="row_name">Email</div>
-                            <div class="input"><input type="text" placeholder="Contact, without the spam"></div>
+                            <div class="input"><input type="text" placeholder="Contact, without the spam" name="email"></div>
                         </div>
                         <div class="form_row">
                             <div class="row_name">Images</div>
-                            <div class="input"><input type="text" placeholder="Cool Pictures"></div>
-                        </div>
-                        <div class="form_row">
-                            <div class="row_name">Videos</div>
-                            <div class="input"><input type="text" placeholder="Sick tricks"></div>
+                            <div class="input"><input type="text" placeholder="Cool Pictures" name="profile_image_url"></div>
                         </div>
                         <div class="form_row">
                             <div class="row_name">Bio</div>
-                            <div class="input"><textarea name="" placeholder="Why this person is awesome!"></textarea></div>
+                            <div class="input"><textarea name="bio" placeholder="Why this person is awesome!"></textarea></div>
                         </div>
-                    </form>
                     <button>Save Volunteer</button>
+                    </form>
                 </div>
             </div>
         </div>
