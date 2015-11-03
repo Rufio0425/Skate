@@ -2,44 +2,24 @@
 <html>
     <head>
         <title>New Volunteer</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:s100" rel="stylesheet" type="text/css">
-        <link href="" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Raleway:300,400,500' rel='stylesheet' type='text/css'>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <link rel="stylesheet" href="fonts/">
         <style>
-            @font-face {
-                font-family: 'LeagueGothicRegular';
-                src: url('fonts/League_Gothic-webfont.eot');
-                src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/League_Gothic-webfont.woff') format('woff'), url('fonts/League_Gothic-webfont.ttf') format('truetype'), url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            @font-face {
-                font-family: 'NovecentowideBold';
-                src: url('fonts/Novecentowide-Bold-webfont.eot');
-                src: url('fonts/Novecentowide-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Novecentowide-Bold-webfont.woff') format('woff'), url('fonts/Novecentowide-Bold-webfont.ttf') format('truetype'), url('fonts/Novecentowide-Bold-webfont.svg#NovecentowideBold') format('svg');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            html, body {
-                height: 100%;
-            }
 
             body {
+                background-image: url('http://www.skateafterschool.org/wp-content/uploads/2014/02/7.jpg');
+                background-size:cover;
                 margin: 0;
                 padding: 0;
                 width: 100%;
                 font-weight: 100;
             }
-
+/*Nav*/
             header{
                 display:flex;
                 text-align:center;
-                background-color: black;
-                font-family:helvetica;
+                background-color: #222222;
+                font-family:arial;
                 position:fixed;
                 width:100%;
                 z-index:1000;
@@ -48,80 +28,112 @@
 
             header:hover{
                 padding:10px 0;
-                background-color: purple;
+                background-color: #222222;
+            }
+
+            header a{
+                text-decoration:none;
+                font-family: 'Pathway Gothic One', sans-serif;
+                font-weight:bold;
             }
 
             .logo{
                 text-align:left;
-                background-color: orange;
+                background-color: #222222;
+                color:white;
                 flex:1;
                 padding:15px 70px;
             }
 
-            .nav{
-                background-color: red;
+           .nav{
+                background-color: #222222;
                 flex:3;
-                text-align:center;
+                text-align:right;
+                font-size:14pt;
                 padding:15px 51px 15px;
             }
 
             .nav a{
-                background-color: white;
-                font-size:10pt;
+                background-color: #222222;
+                color:#666666;
                 padding:10px;
             }
 
+            .nav a:hover{
+                color:#fff;
+            }
+/*End Nav*/
             .panel{
                 height:650px;
                 padding-top:33px;
                 width:100%;
-                background-color: blue;
             }
 
             .main{
                 margin-top:15px;
-                color:black;
+                color:#FFFFFF;
                 width:35em;
                 margin-left:auto;
                 margin-right:auto;
-                background-color: yellow;
+            }
+
+            .title{
+                font-weight:900;
+                font-size:65pt;
+                font-family: 'Pathway Gothic One', sans-serif;
+                text-align:center;
+                padding:20px 0 0 0;
             }
 
             .volunteer{
                 text-align:center;
-                background-color: brown;
-                padding:20px 0;
+                padding:10px 0;
+                font-size:25pt;
+                font-family: 'Raleway', sans-serif;
+                font-weight:400;
             }
 
             form{
-                background-color: green;
-                padding:10px 0 10px 10px;
                 display:flex;
                 flex-direction:column;
             }
 
-            .form_row{
-
-                font-size:16pt;
+            input, textarea{
+                font-family: sans-serif;
+                font-size: 18px;
+                box-shadow: none;
+                border-radius: 5px;
+                border:none;
+                height:25px;
+                padding:0 5px;
             }
 
-            .title{
-                text-align:center;
-                padding:20px 0;
-                background-color: green;
+            textarea{
+                margin: 0px;
+                width: 470px;
+                height: 80px;
+                resize:none;
             }
 
-            .title span{
-                font-size:50px;
-                background-color: yellow;
+            button{
+                margin-top:5px;
+                font-size:20pt;
+                font-family: 'Pathway Gothic One', sans-serif;
+                text-decoration:none;
+                font-weight:600;
+                color: white;
+                border:0;
+                background-color: #ff6b6b;
+                border-radius:10px;
+                border:1px solid #ff6b6b;
+                padding:5px 0;
             }
 
-           
         </style>
     </head>
     <body>
         <header>
-            <div class="logo"><a href="">Skate After School</a></div>
+            <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>
             <div class="nav">
                 <a href="/">Home</a>
                 <a href="/volunteer">Who's Helping</a>

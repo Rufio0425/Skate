@@ -19,8 +19,11 @@
             width: 100%;
             font-weight: 100;
         }
+
+        /*{{-------- Future lightbox volunteer sign up --------}}*/
+
      /*lightbox*/
-     	.lightbox-tint{
+     	/*.lightbox-tint{
             position:absolute;
             top:0;
             left:0;
@@ -71,7 +74,7 @@
             position:absolute;
             top: 0;
             right: -50px;
-        }
+        }*/
 
      /*nav bar*/
 
@@ -224,19 +227,12 @@
 			background-size:cover;
 			height:400px;
 		}
-
-		.media-join{
-			background-color: pink;
-			text-align:center;
-		}
-
-		.red{
-			background-color: blue; 
-		}
 	</style>
 </head>
 <body>
-	<div class="lightbox-tint">
+
+{{-------- Future lightbox volunteer sign up --------}}
+	{{-- <div class="lightbox-tint">
         <div class="lightbox">
             <div>Let's Get Started!</div>
             <form action="">
@@ -257,7 +253,7 @@
                 </div>
             </form>
             <button class="exit">Exit</button>
-        </div>
+        </div> --}}
     </div>
 	<header>
         <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>

@@ -3,31 +3,14 @@
     <head>
         <title>Volunteers</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:s100" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Raleway:300,400,500' rel='stylesheet' type='text/css'>
         <link href="" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <style>
-            @font-face {
-                font-family: 'LeagueGothicRegular';
-                src: url('fonts/League_Gothic-webfont.eot');
-                src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/League_Gothic-webfont.woff') format('woff'), url('fonts/League_Gothic-webfont.ttf') format('truetype'), url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            @font-face {
-                font-family: 'NovecentowideBold';
-                src: url('fonts/Novecentowide-Bold-webfont.eot');
-                src: url('fonts/Novecentowide-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Novecentowide-Bold-webfont.woff') format('woff'), url('fonts/Novecentowide-Bold-webfont.ttf') format('truetype'), url('fonts/Novecentowide-Bold-webfont.svg#NovecentowideBold') format('svg');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            html, body {
-                height: 100%;
-            }
 
             body {
+                background-image: url('http://www.skateafterschool.org/wp-content/uploads/2014/02/7.jpg');
+                background-size:cover;
                 margin: 0;
                 padding: 0;
                 width: 100%;
@@ -187,6 +170,7 @@
             .profile{
                 background-color: red;
                 margin:5px;
+                border-radius:5px;
             }
 
             .profile_pic{
@@ -194,6 +178,10 @@
                 width:200px;
                 background-size:cover;
                 display:inline-block;
+            }
+
+            .profile, .profile_pic{
+                border-radius:5px;
             }
 
             .lightbox-tint{
