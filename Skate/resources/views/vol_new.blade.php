@@ -116,6 +116,7 @@
         }
 
         form{
+            padding:10px 0 10px 10px;
             display:flex;
             flex-direction:column;
         }
@@ -127,7 +128,7 @@
             border-radius: 5px;
             border:none;
             height:25px;
-            padding:0 5px;
+            padding:5px 5px;
         }
 
         textarea{

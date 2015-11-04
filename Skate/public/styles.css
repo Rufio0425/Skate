@@ -1,3 +1,4 @@
+/*Main Body*/
 body {
     margin: 0;
     padding: 0;
@@ -16,7 +17,10 @@ body {
     background-size: cover;
     z-index: -100; 
 }
+/*Main Body*/
 
+
+/*Nav Bar*/
 header{
     display:flex;
     text-align:center;
@@ -90,13 +94,16 @@ header:hover{
 .logout:active{
     background-color: #222222;
 }
+/*Nav Bar*/
 
+
+/*All Volunteers View*/
 .hero{
     padding-top:33px;
     width:100%;
 }
 
-.main{
+.vom_section{
     margin-top:15px;
     color:black;
     width:74em;
@@ -195,3 +202,72 @@ aside{
 .name{
     font-size:16pt;
 }
+/*All Volunteers View*/
+
+/*Login Page*/
+.panel{
+    height:650px;
+    padding-top:33px;
+    width:100%;
+}
+
+.main_login{
+    margin-top:100px;
+    color:black;
+    width:35em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.title{
+    text-align:center;
+    font-size: 150px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    color:#fff;
+    font-weight:900;
+}
+
+.admin{
+    text-align:center;
+    padding:20px 0;
+}
+
+form{
+    padding:10px 0 10px 10px;
+    display:flex;
+    flex-direction:column;
+}
+
+.row_name{
+    font-size:25pt;
+    font-family: 'Raleway', sans-serif;
+    font-weight:400;
+    color:#fff;
+}
+
+input{
+    background-color: #fff;
+    font-family: sans-serif;
+    font-size: 18px;
+    box-shadow: none;
+    border-radius: 5px;
+    border:none;
+    height:25px;
+    padding:5px 5px;
+}
+
+.loginbutton1 button{
+    margin-top:20px;
+    font-size:25pt;
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-decoration:none;
+    font-weight:600;
+    color: white;
+    border:0;
+    background-color: #ff6b6b;
+    border-radius:10px;
+    padding:5px 100px;
+}
+
+/*Login Page*/
+

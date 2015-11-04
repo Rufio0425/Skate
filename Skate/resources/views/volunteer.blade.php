@@ -11,7 +11,7 @@
 
         @section('main_content')
         <div class="panel hero">
-            <div class="main">
+            <div class="vom_section">
                 <div class="banner">
                     <div class="title"><span>Volunteers</span></div>
                 </div>
