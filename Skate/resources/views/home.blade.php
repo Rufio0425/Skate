@@ -1,34 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>New Volunteer</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:s100" rel="stylesheet" type="text/css">
-        <link href="" rel="stylesheet" type="text/css">
+        <title>Login</title>
+        <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Raleway:300,400,500' rel='stylesheet' type='text/css'>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <link rel="stylesheet" href="fonts/">
         <style>
-            @font-face {
-                font-family: 'LeagueGothicRegular';
-                src: url('fonts/League_Gothic-webfont.eot');
-                src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/League_Gothic-webfont.woff') format('woff'), url('fonts/League_Gothic-webfont.ttf') format('truetype'), url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            @font-face {
-                font-family: 'NovecentowideBold';
-                src: url('fonts/Novecentowide-Bold-webfont.eot');
-                src: url('fonts/Novecentowide-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Novecentowide-Bold-webfont.woff') format('woff'), url('fonts/Novecentowide-Bold-webfont.ttf') format('truetype'), url('fonts/Novecentowide-Bold-webfont.svg#NovecentowideBold') format('svg');
-                font-weight: normal;
-                font-style: normal;
-            }
-
-            html, body {
-                height: 100%;
-            }
-
             body {
+                background-image: url('http://www.skateafterschool.org/wp-content/uploads/2014/02/7.jpg');
+                background-size:cover;
                 margin: 0;
                 padding: 0;
                 width: 100%;
@@ -38,92 +17,152 @@
             header{
                 display:flex;
                 text-align:center;
-                background-color: black;
-                font-family:helvetica;
+                background-color: #222222;
+                font-family:arial;
                 position:fixed;
                 width:100%;
                 z-index:1000;
                 transition: all .35s;
             }
 
+            header a{
+                text-decoration:none;
+                font-family: 'Pathway Gothic One', sans-serif;
+                font-weight:bold;
+            }
+
             header:hover{
-                padding:10px 0;
-                background-color: purple;
+                padding:5px 0;
+                background-color: #222222;
             }
 
             .logo{
                 text-align:left;
-                background-color: orange;
+                background-color: #222222;
+                color:white;
                 flex:1;
-                padding:15px 70px;
+                padding:18px 70px;
+            }
+
+            .logo a{
+                color:white;
             }
 
             .nav{
-                background-color: red;
+                background-color: #222222;
                 flex:3;
-                text-align:center;
+                text-align:right;
+                font-size:14pt;
                 padding:15px 51px 15px;
             }
 
             .nav a{
-                background-color: white;
-                font-size:10pt;
+                background-color: #222222;
+                color:#666666;
                 padding:10px;
+            }
+
+            .nav a:hover{
+                color:#fff;
+            }
+
+            .logout{
+                text-decoration:none;
+                font-family: 'Pathway Gothic One', sans-serif;
+                font-weight:600;
+                color: white;
+                border:0;
+                font-size: 16pt;
+                background-color: #ff6b6b;
+                border-radius:10px;
+                border:1px solid #ff6b6b;
+            }
+
+            .logout a{
+                text-decoration:none;
+                background-color: transparent;
+                color:#fff;
+            }
+
+            .logout:active{
+                background-color: #222222;
             }
 
             .panel{
                 height:650px;
                 padding-top:33px;
                 width:100%;
-                background-color: blue;
             }
 
             .main{
-                margin-top:15px;
+                margin-top:100px;
                 color:black;
                 width:35em;
                 margin-left:auto;
                 margin-right:auto;
-                background-color: yellow;
+            }
+
+            .title{
+                text-align:center;
+                font-size: 150px;
+                font-family: 'Pathway Gothic One', sans-serif;
+                color:#fff;
+                font-weight:900;
             }
 
             .volunteer{
                 text-align:center;
-                background-color: brown;
                 padding:20px 0;
             }
 
             form{
-                background-color: green;
                 padding:10px 0 10px 10px;
                 display:flex;
                 flex-direction:column;
             }
 
-            .form_row{
-
-                font-size:16pt;
+            .row_name{
+                font-size:25pt;
+                font-family: 'Raleway', sans-serif;
+                font-weight:400;
+                color:#fff;
             }
 
-            .title{
-                text-align:center;
-                padding:20px 0;
-                background-color: green;
+            input{
+                background-color: #fff;
+                font-family: sans-serif;
+                font-size: 18px;
+                box-shadow: none;
+                border-radius: 5px;
+                border:none;
+                height:25px;
+                padding:5px 5px;
             }
-
-            .title span{
-                font-size:50px;
-                background-color: yellow;
+            
+            .loginbutton1 button{
+                margin-top:20px;
+                font-size:25pt;
+                font-family: 'Pathway Gothic One', sans-serif;
+                text-decoration:none;
+                font-weight:600;
+                color: white;
+                border:0;
+                background-color: #ff6b6b;
+                border-radius:10px;
+                padding:5px 100px;
             }
-
-           
         </style>
     </head>
     <body>
         <header>
-            <div class="logo"><a href="">Skate After School</a></div>
+            <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>
             <div class="nav">
-                <a href="/">Login</a>
+                <a href="/volunteer">Who's Helping</a>
+                @if(Auth::User())
+                    <button class="logout"><a href="/auth/logout">Logout</a></button>
+                @else
+                    <button class="logout"><a href="/">Login</a></button>
+                @endif
             </div>
         </header>
         <div class="panel">
@@ -148,8 +187,8 @@
                         <div class="form_row">
                             <div class="row_name">Password</div>
                             <div class="input"><input class="inputpw"type="password" name="password" id="password"></div>
-                            <div class="remember"><input type="checkbox" name="remember">Remember Me</div>
-                            <div class="loginbutton1"> <button  type="submit">Login</button></div>
+                         {{--    <div class="remember"><input type="checkbox" name="remember">Remember Me</div> --}}
+                            <div class="loginbutton1"> <button type="submit">Login</button></div>
                         </div>
                     </form>
                 </div>

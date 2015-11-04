@@ -89,15 +89,16 @@
             transition: all .35s;
         }
 
-        header a{
-          	text-decoration:none;
-        	font-family: 'Pathway Gothic One', sans-serif;
-        	font-weight:bold;
-        }
 
         header:hover{
             padding:10px 0;
             background-color: #222222;
+        }
+
+        header a{
+          	text-decoration:none;
+        	font-family: 'Pathway Gothic One', sans-serif;
+        	font-weight:bold;
         }
 
         .logo{
@@ -105,11 +106,7 @@
             background-color: #222222;
             color:white;
             flex:1;
-            padding:15px 70px;
-        }
-
-        .logo a{
-        	color:white;
+            padding:18px 70px;
         }
 
         .nav{
@@ -130,20 +127,26 @@
         	color:#fff;
         }
 
-        .sign_up{
-        	text-decoration:none;
-	        font-family: 'Pathway Gothic One', sans-serif;
-			font-weight:600;
-	    	color: white;
-	    	border:0;
-	    	font-size: 16pt;
-	    	background-color: #ff6b6b;
-	    	border-radius:10px;
-	    	border:1px solid #ff6b6b;
+        .logout{
+            text-decoration:none;
+            font-family: 'Pathway Gothic One', sans-serif;
+            font-weight:600;
+            color: white;
+            border:0;
+            font-size: 16pt;
+            background-color: #ff6b6b;
+            border-radius:10px;
+            border:1px solid #ff6b6b;
         }
 
-        .sign_up:active{
-        	background-color: #222222;
+        .logout a{
+            text-decoration:none;
+            background-color: transparent;
+            color:#fff;
+        }
+
+        .logout:active{
+            background-color: #222222;
         }
 
     /*profile*/
@@ -207,8 +210,17 @@
 		}
 
 		.bio{
+			margin-top:10px;
 			font-size:20pt;
 			font-family: 'Raleway', sans-serif;
+		}
+		.bio .txtarea {
+			display:none;
+		}
+
+		.bio_input{
+		    width: 470px;
+		    height: 80px;
 		}
 
 	/*media*/
@@ -258,10 +270,13 @@
 	<header>
         <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>
         <div class="nav">
-            <a href="">Home</a>
             <a href="/volunteer">Who's Helping</a>
-            <a href="/vol_new">New Volunteer</a>
-            <button class="sign_up">Become One of Us!</button>
+            @if(Auth::User())
+                <a href="/vol_new">New Volunteer</a>
+                <button class="logout"><a href="/auth/logout">Logout</a></button>
+            @else
+                <button class="logout"><a href="/">Login</a></button>
+            @endif
         </div>
     </header>
 
@@ -270,7 +285,11 @@
 			<div class="aside">
 				<div class="vol_pic" style="background-image: url('{{ $volunteer->profile_image_url }}')"></div>
 				<br>
-				<div><span class="editors"><i class="fa fa-camera-retro fa-lg"></i></span></div>
+				<div>
+					@if(Auth::User())
+					<span class="editors"><i class="fa fa-camera-retro fa-lg"></i></span>
+					@endif
+				</div>
 				<br>
 				<div class="sponser_title">Sponsors</div>
 				<div class="sponsers">
@@ -278,12 +297,25 @@
 					<a href="{{ $sponsor->url }}" target="_blank"><img src="{{ $sponsor->image_url }}"></a>
 					@endforeach
 					<br>
-				<span class="editors"><i class="fa fa-plus-square"></i></span>
+					@if(Auth::User())
+					<span class="editors"><i class="fa fa-plus-square"></i></span>
+					@endif
 				</div>
 			</div>
 			<div class="content">
-				<div class="name">{{ $volunteer->first_name }} {{ $volunteer->last_name }} <span class="editors"><i class="fa fa-pencil"></i></span></div>
-				<div class="bio">{{ $volunteer->bio }} <span class="editors"><i class="fa fa-pencil"></i></div>
+				<div class="name">{{ $volunteer->first_name }} {{ $volunteer->last_name }}
+					@if(Auth::User())
+					<span class="editors"><i class="fa fa-pencil"></i></span>
+					@endif
+				</div>
+				<div class="bio"><span class="val">{{ $volunteer->bio }}</span>
+					@if(Auth::User())
+					<span class="editors"><i class="fa fa-pencil"></i></span>
+					@endif
+					<div class="txtarea">
+						<textarea class="bio_input">{{ $volunteer->bio }}</textarea><button class="save">Save</button><button class="cancel">Cancel</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -295,15 +327,20 @@
 			<div style="background-image: url('http://a3.espncdn.com/photo/2014/1016/as_skate_lay6_1536.jpg')"></div>
 			<div><iframe width="100%" height="100%" src="https://www.youtube.com/embed/93YiIOswx0g" frameborder="0" allowfullscreen></iframe></div>
 		</div>
-		<div><span class="editors">Add New Media<i class="fa fa-plus-square"></i></span></div>
 
 	</div>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
+// EDIT 
 			function addEditor(){
 				$('.editors').on('click', function(){
-					$(this).closest('div').html('<input placeholder="{{ $volunteer->bio }}" class="bio_input"><button class="save">Save</button><button>Cancel</button>');
+					// $(".bio .txtarea textarea").text($('.bio .val').text());
+					$(".bio_input").val($('.bio .val').text());
+					$(".bio .txtarea").show();
+					$(".bio .editors").hide();
+					$(".bio .val").hide();
+					//$(this).closest('div').find(".txtarea").show();// html('<textarea class="bio_input">{{ $volunteer->bio }}</textarea><button class="save">Save</button><button>Cancel</button>');
 				});
 			}
 
@@ -314,6 +351,31 @@
                     'X-CSRF-TOKEN': '{!! csrf_token() !!}'
                 }
             });
+// SAVE
+			$('.bio').on('click', '.save', function(){
+				console.log('Hello');
+				var updatedBio =  $('.bio_input').val()
+				var formData = {
+					bio: updatedBio,
+				};
+				var button = this;
+
+				$.post( "/api/volunteer/{{ $volunteer->id }}/update", formData, function( data ) {
+  					$(".bio .txtarea").hide();
+  					$(".bio .val").html(updatedBio);
+  					$(".bio .editors").show();
+					$(".bio .val").show();
+  					//$(button).parent().find(".txtarea").hide()// .html(updatedBio + ' <span class="editors"><i class="fa fa-pencil"></i>');
+  					//addEditor();
+				});	
+			});
+// CANCEL
+			$('.bio').on('click', '.cancel', function(){
+				$(".bio .txtarea").hide();
+				// $(".bio .val").html();
+				$(".bio .editors").show();
+				$(".bio .val").show();
+			});
 
 			$('.slider').slick({
 				dots: true,
@@ -322,27 +384,6 @@
 				slidesToScroll: 1,
 				autoplaySpeed: 2000,
 			});
-
-			$('.bio').on('click', '.save', function(){
-				console.log('Hello');
-
-				var updatedBio =  $('.bio_input').val()
-
-				var formData = {
-					bio: updatedBio,
-				};
-
-
-
-				var button = this;
-
-				$.post( "/api/volunteer/{{ $volunteer->id }}/update", formData, function( data ) {
-  					console.log(button);
-  					$(button).parent().html(updatedBio + ' <span class="editors"><i class="fa fa-pencil"></i>');
-  					addEditor();
-				});
-			});
-
 			// $('button').click( function(){
    //              $('.lightbox-tint').toggleClass('on');
    //          });

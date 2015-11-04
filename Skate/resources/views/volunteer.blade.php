@@ -17,6 +17,18 @@
                 font-weight: 100;
             }
 
+            .background{
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: url('http://www.skateafterschool.org/wp-content/uploads/2014/02/7.jpg') no-repeat fixed;
+                background-position: center center;
+                background-size: cover;
+                z-index: -100; 
+            }
+
            /* .container {
                 background-color: orange;
                 text-align: center;
@@ -86,7 +98,7 @@
                 color:#fff;
             }
 
-            .sign_up{
+            .logout{
                 text-decoration:none;
                 font-family: 'Pathway Gothic One', sans-serif;
                 font-weight:600;
@@ -98,7 +110,13 @@
                 border:1px solid #ff6b6b;
             }
 
-            .sign_up:active{
+            .logout a{
+                text-decoration:none;
+                background-color: transparent;
+                color:#fff;
+            }
+
+            .logout:active{
                 background-color: #222222;
             }
 
@@ -161,25 +179,24 @@
             }
 
             .vom_name{
+                margin-top:10px;
                 font-size:25pt;
             }
-
 
             .volunteers{
                 font-family:'Raleway';
                 display:flex;
-                justify-content:center;
                 width:74em;
                 margin-left:auto;
                 margin-right:auto;
-                text-align:center;
                 padding:20px 0;
             }
 
             .vol_describe{
-                width:400px;
+                width:460px;
                 font-weight:500;
                 font-size:16pt;
+                text-align:left;
             }
 
             .profiles{
@@ -292,13 +309,18 @@
                 <button class="exit">Exit</button>
             </div>
         </div> --}}
+        <div class="background"></div>
         <header>
             <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>
             <div class="nav">
-                <a href="">Home</a>
                 <a href="/volunteer">Who's Helping</a>
-                <a href="/vol_new">New Volunteer</a>
-                <button class="sign_up">Become One of Us!</button>
+                @if(Auth::User())
+                    <a href="/vol_new">New Volunteer</a>
+                    <button class="logout"><a href="/auth/logout">Logout</a></button>
+                @else
+                    <button class="logout"><a href="/">Login</a></button>
+                @endif
+                
             </div>
         </header>
         <div class="panel hero">
@@ -317,7 +339,7 @@
             
             <div class="volunteers">
                 <div class="vol_describe">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati ea ad nemo fugiat fuga veritatis illo perferendis maxime id, eius, accusantium eos, rem odit esse neque ipsam dolorum, cumque blanditiis.
+                    At Skate After School, we match talented and enthusiastic volunteers with Phoenix area schools to provide skateboard instruction to underserved youth. With donated skateboard equipment, we are able to engage students in a challenging and exciting extracurricular activity.
                 </div>
 
                 <div class="profiles">
