@@ -207,7 +207,7 @@ aside{
 /*Login Page*/
 .panel{
     height:650px;
-    padding-top:33px;
+    padding-top:23px;
     width:100%;
 }
 
@@ -217,14 +217,6 @@ aside{
     width:35em;
     margin-left:auto;
     margin-right:auto;
-}
-
-.title{
-    text-align:center;
-    font-size: 150px;
-    font-family: 'Pathway Gothic One', sans-serif;
-    color:#fff;
-    font-weight:900;
 }
 
 .admin{
@@ -271,3 +263,188 @@ input{
 
 /*Login Page*/
 
+/*Volunteer Details*/
+.banner{
+	padding-top:40px;
+}
+
+.volunteer{
+	display:flex;
+	width:74em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.aside{
+	padding:40px 10px 0 20px;
+	flex:1;
+	text-align:center;
+}
+
+.editors{
+	font-size:12pt;
+	color:black;
+}
+
+.vol_pic{
+	height:280px;
+	width:280px;
+	background-size:cover;
+	border-radius:140px;
+}
+
+.sponser_title{
+	font-family: 'Pathway Gothic One', sans-serif;
+	color:#FFFFFF;
+	font-weight: 900;
+	font-size: 24pt;
+	transform: translateY(-15px);
+}
+
+.sponsers img{
+	height:50px;
+	width:50px;
+	border-radius:25px;
+}
+
+.description{
+	padding:40px 0;
+	text-align:center;
+	color:#FFFFFF;
+	flex:3;
+}
+
+.vol_name{
+	font-weight:900;
+	font-size:65pt;
+	font-family: 'Pathway Gothic One', sans-serif;
+}
+
+.bio{
+	margin-top:10px;
+	font-size:20pt;
+	font-family: 'Raleway', sans-serif;
+}
+
+.bio .txtarea {
+	display:none;
+}
+
+.bio_input{
+    width: 470px;
+    height: 120px;
+}
+
+textarea{
+	resize:none;
+	margin: 0px;
+    width: 265px;
+    height: 120px;
+    font-family: sans-serif;
+    font-size: 18px;
+    box-shadow: none;
+    border-radius: 5px;
+    border:none;
+}
+
+.save, .cancel{
+	margin:20px;
+    font-size:25pt;
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-decoration:none;
+    font-weight:600;
+    color: white;
+    border:0;
+    border-radius:10px;
+    padding:5px 100px;
+}
+
+.save{
+	background-color: #ff6b6b;
+}
+
+.cancel{
+	background-color: #222222;
+}
+
+.slider{
+	padding-top:20px;
+	padding-bottom:0;
+	width:74em;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    border-radius:100px;
+}
+
+.slider div{
+	background-size:cover;
+	height:400px;
+}
+/*Volunteer Details*/
+
+/*New Volunteer*/
+.main{
+    margin-top:15px;
+    color:#FFFFFF;
+    width:35em;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.new_title{
+    font-weight:900;
+    font-size:65pt;
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-align:center;
+    padding:20px 0 0 0;
+}
+
+.new_volunteer{
+    text-align:center;
+    font-size:25pt;
+    font-family: 'Raleway', sans-serif;
+    font-weight:400;
+
+}
+
+.new_volunteer form{
+    padding:3px 0 10px 10px;
+    display:flex;
+    flex-direction:column;
+}
+
+.new_volunteer input, textarea{
+    width: 265px;
+    font-family: sans-serif;
+    font-size: 18px;
+    box-shadow: none;
+    border-radius: 5px;
+    border:none;
+    height:25px;
+    padding:5px 5px;
+}
+
+.bio_textarea{
+    margin: 0px;
+    height: 80px;
+    resize:none;
+}
+
+.vol_save{
+    margin-top:5px;
+    font-size:20pt;
+    font-family: 'Pathway Gothic One', sans-serif;
+    text-decoration:none;
+    font-weight:600;
+    color: white;
+    border:0;
+    background-color: #ff6b6b;
+    border-radius:10px;
+    border:1px solid #ff6b6b;
+    padding:5px 0;
+    width: 272px;
+    transform: translateX(140px);
+}
+
+/*New Volunteer*/
