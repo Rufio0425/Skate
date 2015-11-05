@@ -32,7 +32,6 @@
                         <div class="form_row">
                             <div class="row_name">Password</div>
                             <div class="input"><input class="inputpw"type="password" name="password" id="password"></div>
-                         {{--    <div class="remember"><input type="checkbox" name="remember">Remember Me</div> --}}
                             <div class="loginbutton1"> <button type="submit">Login</button></div>
                         </div>
                     </form>

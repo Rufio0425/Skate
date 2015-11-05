@@ -17,8 +17,8 @@
                 </div>
                 <div class="vom">
                     <div class="vom_title"><span>Volunteer of The Month</span></div>
-                    <div class="vom_pic" style="background-image: url('https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAI-AAAAJDMzYzE3MWVkLTAzODUtNDcxNC04YTg0LWNlZmZmNWQ4NmNiOQ.jpg')"></div>
-                    <div class="vom_name"><a href="">Josh Eberhard</a></div>
+                    <div class="vom_pic" style="background-image: url('https://scontent.fphx1-2.fna.fbcdn.net/hphotos-xpa1/v/t1.0-9/10447617_808619449150500_5036414172844067131_n.jpg?oh=7db23b49602316493d9789c5866a87f3&oe=56866982')"></div>
+                    <div class="vom_name"><a href="">Max Collay</a></div>
                 </div>
             </div>
         </div>
