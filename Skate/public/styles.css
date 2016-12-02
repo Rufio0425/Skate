@@ -12,7 +12,7 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    background: url('http://www.skateafterschool.org/wp-content/uploads/2014/02/7.jpg') no-repeat fixed;
+    background: url('../images/background.jpg') no-repeat fixed;
     background-position: center center;
     background-size: cover;
     z-index: -100; 

@@ -4,7 +4,7 @@
 <body>
 	<div class="background"></div>
 	<header>
-        <div class="logo"><a href=""><img src="http://www.skateafterschool.org/wp-content/uploads/2014/02/sas-wordmark.png"></a></div>
+        <div class="logo"><a href=""><img src="{{URL::asset('/images/sas-wordmark.png')}}"></a></div>
         <div class="nav">
             <a href="/volunteer">Who's Helping</a>
             @if(Auth::User())
