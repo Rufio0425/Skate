@@ -29,7 +29,7 @@
                         <div class="input"><input type="text" placeholder="Contact, without the spam" name="email"></div>
                     </div>
                     <div class="form_row">
-                        <div class="row_name">Images</div>
+                        <div class="row_name">Profile Image</div>
                         <div class="input"><input type="text" placeholder="Cool Pictures" name="profile_image_url"></div>
                     </div>
                     <div class="form_row">

@@ -12,9 +12,10 @@ $(function(){
 
     $.ajaxSetup({
         headers: {
-            'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+            'X-CSRF-TOKEN': csrf_token
         }
     });
+
 // SAVE
     $('.bio').on('click', '.save', function(){
         console.log('Hello');
@@ -24,7 +25,12 @@ $(function(){
         };
         var button = this;
 
-        $.post( "/api/volunteer/{{ $volunteer->id }}/update", formData, function( data ) {
+        $.post( "/api/volunteer/"+ volunteer_id +"/update", formData, function( data ) {
+            // $.ajaxSetup({
+            //     headers: {
+            //         'X-CSRF-TOKEN': '{!! csrf_token() !!}'
+            //     }
+            // });
             $(".bio .txtarea").hide();
             $(".bio .val").html(updatedBio);
             $(".bio .editors").show();

@@ -41,7 +41,8 @@ class Volunteer {
 
         $row = DB::selectOne($sql, [':id' => $id]);
 
-        $volunteer = [];
+        // $volunteer = [];
+        // dd($row);
 
         $volunteer = new Volunteer();
         $volunteer->id = $row->id;
