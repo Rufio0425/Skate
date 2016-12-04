@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Volunteer Details</title>
+	<link rel="icon" href="/images/sas_logo.jpg">
 	<link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Raleway:300,400,500' rel='stylesheet' type='text/css'>
 	<link href="/styles.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.5.8/slick.css"/>
@@ -62,7 +63,7 @@
 	<div class="media">
 		<div class="slider">
 			<div style="background-image: url('http://assets.espn.go.com/photo/2009/0424/as_skateRyan_Lay_Bs180_Full.jpg')"></div>
-			<div style="background-image: url('http://cdn.skateboarding.transworld.net/files/2009/11/ryan-lay-wallride.jpg')"></div>
+			<div style="background-image: url('/images/ryan_lay_5050.png')"></div>
 			<div style="background-image: url('http://cdn.grindtv.com/wp-content/uploads/2012/06/RyanLay-crook-4281.jpg')"></div>
 			<div style="background-image: url('http://a3.espncdn.com/photo/2014/1016/as_skate_lay6_1536.jpg')"></div>
 			<div><iframe width="100%" height="100%" src="https://www.youtube.com/embed/93YiIOswx0g" frameborder="0" allowfullscreen></iframe></div>

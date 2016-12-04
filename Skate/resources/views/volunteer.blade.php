@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Volunteers</title>
+        <link rel="icon" href="/images/sas_logo.jpg">
         <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Raleway:300,400,500' rel='stylesheet' type='text/css'>
         <link href="/styles.css" rel="stylesheet" type="text/css">
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

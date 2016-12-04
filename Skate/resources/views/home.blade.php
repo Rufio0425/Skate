@@ -4,6 +4,7 @@
         <title>Login</title>
         <link href='https://fonts.googleapis.com/css?family=Pathway+Gothic+One|Raleway:300,400,500' rel='stylesheet' type='text/css'>
         <link href="/styles.css" rel="stylesheet" type="text/css">
+        <link rel="icon" href="/images/sas_logo.jpg">
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     </head>
     <body>
